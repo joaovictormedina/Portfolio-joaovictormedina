@@ -1,0 +1,216 @@
+/* src/styles/GlobalStyles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove padding padrão */
+    width: 100%;
+    /* Garante que a largura seja 100% */
+    overflow-x: hidden;
+    /* Evita rolagem horizontal desnecessária */
+    gap: 0px;
+    opacity: 0px;
+    background-color: #0F1624;
+    
+}
+
+
+nav {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #0F1624;
+    width: 100%;
+    /* Garante que o nav ocupe 100% da largura */
+    padding: 10px 0;
+    /* Padding superior e inferior */
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-list {
+    flex-grow: 1;
+    /* Permite que a lista ocupe o máximo de espaço disponível */
+}
+
+.container {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 20px
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    /* Remove margem */
+    display: flex;
+    /* Usa flexbox para os itens da lista */
+    justify-content: center;
+    /* Centraliza os itens */
+    padding: 0;
+    /* Remove padding */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0% 5% 0% 5%;
+}
+
+.navbar-icons {
+    display: flex; /* Usar flexbox para os ícones */
+    justify-content: flex-end; 
+}
+
+.navbar-icons img {
+    width: 24px; /* Ajuste o tamanho conforme necessário */
+    height: 24px; /* Ajuste o tamanho conforme necessário */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+}
+
+.hero {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+    padding: 70px 10px;
+    color: #FFFFFF;
+    background-color: #0F1624;
+}
+.hero p {
+    color: #BCBCBC;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 40px 0px 0px 0px;
+}
+
+section {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 10px;
+    margin: 0;
+    background-color: #0F1624;
+    text-align: center;
+}
+
+.Count{
+    font-size: 200px;
+}
+
+#projects {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+    padding: 30px 20px;
+    color: #FFFFFF;
+    background-color: #0F1624;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Poppins;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+        padding: 50px 20px;
+        color: #FFFFFF;
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center; /* Centraliza o conteúdo */
+    max-width: 300px; /* Limita a largura do cartão */
+    background-color: #3f3f3f;
+}
+
+.project-image {
+    width: 100%;
+    /* Ajusta a imagem para a largura do cartão */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+}
+
+
+
+.project-link:hover {
+    text-decoration: underline;
+    /* Adiciona sublinhado ao passar o mouse (opcional) */
+}
+
+#about {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    background-color: #0F1624;
+}
+
+.footer {    
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 85px;
+    padding-bottom: 35px;
+    background-color: #0F1624; /* Cor de fundo */
+}
+
+.footer-content {
+    display: flex; /* Exibe os contatos e ícones sociais em linha */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha verticalmente */
+    width: 100%; /* Para garantir que ocupe todo o espaço */
+}
+
+.footer-contacts {
+    display: flex; /* Exibe os itens de contato em linha */
+    justify-content: center; /* Centraliza os itens de contato */
+    align-items: center; /* Alinha verticalmente os itens de contato */
+    margin-right: 140px; /* Espaçamento à direita entre contatos e ícones sociais */
+}
+
+.footer-item {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 10px;
+    text-align: left; /* Centraliza o texto */
+    margin: 0 55px; /* Margem lateral entre os itens */
+}
+
+.footer-social {
+    display: flex; /* Exibe os ícones sociais em linha */
+    gap: 15px; /* Espaçamento entre os ícones sociais */
+}
+
+.footer-social img {
+    width: 64px; /* Ajuste o tamanho dos ícones */
+    height: 64px;
+    
+}
+
