@@ -1,65 +1,93 @@
-/* Styles for the timeline */
 .timeline-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* Alinha os itens ao topo */
-    margin: 100px 0;
+    flex-wrap: wrap;
+    /* Permite que os itens se ajustem em telas menores */
+    margin: 50px 0;
+    /* Diminui a margem em telas menores */
 }
 
-/* Barra de linha do tempo */
 .timeline-bar {
     width: 100%;
     height: 4px;
     background-color: #ccc;
     position: absolute;
-    top: 0%;
-    /* Mantém a barra no meio verticalmente */
+    top: 0;
     z-index: 1;
 }
 
-/* Styles for individual timeline items */
 .timeline-item {
     position: relative;
     border: none;
     border-radius: 5px;
     padding: 15px;
-    margin: 0 20px;
+    margin: 20px 10px;
+    /* Reduz a margem para telas menores */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    max-width: 300px;
+    /* Limita a largura máxima para manter o layout */
+    flex: 1;
+    /* Permite que os itens cresçam conforme necessário */
 }
 
-/* Ponto da linha do tempo */
 .ellipse {
     position: absolute;
-    left: calc(50% - 10px);
-    top: 0%;
-    /* Ajuste para posicionar o ponto mais acima */
+    left: 50%;
+    top: 0;
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
     background-color: #f00;
-    /* Substitua pela imagem do Ellipse */
     border-radius: 50%;
     z-index: 3;
 }
 
-/* Text styling */
 .timeline-item h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 42px;
+    line-height: 36px;
     margin: 10px 0 0;
-    /* Margem superior para separar do ponto */
 }
 
 .timeline-item p {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 22px;
     margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        align-items: center;
+        /* Alinha os itens ao centro em telas pequenas */
+    }
+
+    .timeline-bar {
+        height: 2px;
+        /* Diminui a barra para telas menores */
+    }
+
+    .timeline-item {
+        margin: 10px 0;
+        /* Remove a margem lateral para telas menores */
+        max-width: 90%;
+        /* Deixa os itens ocuparem quase toda a largura da tela */
+    }
+
+    .timeline-item h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .timeline-item p {
+        font-size: 14px;
+    }
 }

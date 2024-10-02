@@ -5,19 +5,13 @@ html,
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    /* Remove margens padrão */
     padding: 0;
-    /* Remove padding padrão */
     width: 100%;
-    /* Garante que a largura seja 100% */
     overflow-x: hidden;
-    /* Evita rolagem horizontal desnecessária */
     gap: 0px;
     opacity: 0px;
     background-color: #0F1624;
-    
 }
-
 
 nav {
     font-family: Poppins;
@@ -28,52 +22,45 @@ nav {
     color: #FFFFFF;
     background-color: #0F1624;
     width: 100%;
-    /* Garante que o nav ocupe 100% da largura */
     padding: 10px 0;
-    /* Padding superior e inferior */
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-list {
-    flex-grow: 1;
-    /* Permite que a lista ocupe o máximo de espaço disponível */
-}
-
-.container {    
+.container {
     display: flex;
     justify-content: space-between;
-    align-items: center;    
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 0 20px
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-list {
+    flex-grow: 1;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    /* Remove margem */
     display: flex;
-    /* Usa flexbox para os itens da lista */
     justify-content: center;
-    /* Centraliza os itens */
     padding: 0;
-    /* Remove padding */
 }
 
 nav ul li {
     display: inline;
-    margin: 0% 5% 0% 5%;
+    margin: 0% 5%;
 }
 
 .navbar-icons {
-    display: flex; /* Usar flexbox para os ícones */
-    justify-content: flex-end; 
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navbar-icons img {
-    width: 24px; /* Ajuste o tamanho conforme necessário */
-    height: 24px; /* Ajuste o tamanho conforme necessário */
-    margin: 0 10px; /* Espaçamento entre os ícones */
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
 }
 
 .hero {
@@ -86,12 +73,13 @@ nav ul li {
     color: #FFFFFF;
     background-color: #0F1624;
 }
+
 .hero p {
     color: #BCBCBC;
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
-    padding: 40px 0px 0px 0px;
+    padding: 40px 0 0;
 }
 
 section {
@@ -105,7 +93,7 @@ section {
     text-align: center;
 }
 
-.Count{
+.Count {
     font-size: 200px;
 }
 
@@ -125,12 +113,12 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
     font-family: Poppins;
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 20px;
-        text-align: center;
-        padding: 50px 20px;
-        color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    padding: 50px 20px;
+    color: #FFFFFF;
 }
 
 .project-card {
@@ -138,25 +126,19 @@ section {
     border-radius: 5px;
     padding: 16px;
     margin: 16px;
-    text-align: center; /* Centraliza o conteúdo */
-    max-width: 300px; /* Limita a largura do cartão */
+    text-align: center;
+    max-width: 300px;
     background-color: #3f3f3f;
 }
 
 .project-image {
     width: 100%;
-    /* Ajusta a imagem para a largura do cartão */
     height: auto;
-    /* Mantém a proporção da imagem */
     border-radius: 5px;
-    /* Bordas arredondadas */
 }
-
-
 
 .project-link:hover {
     text-decoration: underline;
-    /* Adiciona sublinhado ao passar o mouse (opcional) */
 }
 
 #about {
@@ -170,28 +152,28 @@ section {
     background-color: #0F1624;
 }
 
-.footer {    
+.footer {
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 85px;
     padding-bottom: 35px;
-    background-color: #0F1624; /* Cor de fundo */
+    background-color: #0F1624;
 }
 
 .footer-content {
-    display: flex; /* Exibe os contatos e ícones sociais em linha */
-    justify-content: center; /* Centraliza os itens */
-    align-items: center; /* Alinha verticalmente */
-    width: 100%; /* Para garantir que ocupe todo o espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .footer-contacts {
-    display: flex; /* Exibe os itens de contato em linha */
-    justify-content: center; /* Centraliza os itens de contato */
-    align-items: center; /* Alinha verticalmente os itens de contato */
-    margin-right: 140px; /* Espaçamento à direita entre contatos e ícones sociais */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 140px;
 }
 
 .footer-item {
@@ -199,18 +181,98 @@ section {
     font-size: 30px;
     font-weight: 300;
     line-height: 10px;
-    text-align: left; /* Centraliza o texto */
-    margin: 0 55px; /* Margem lateral entre os itens */
+    text-align: left;
+    margin: 0 55px;
 }
 
 .footer-social {
-    display: flex; /* Exibe os ícones sociais em linha */
-    gap: 15px; /* Espaçamento entre os ícones sociais */
+    display: flex;
+    gap: 15px;
 }
 
 .footer-social img {
-    width: 64px; /* Ajuste o tamanho dos ícones */
+    width: 64px;
     height: 64px;
-    
 }
 
+/* Responsividade */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .hero {
+        font-size: 25px;
+    }
+
+    .project-card {
+        max-width: 90%;
+    }
+
+    .footer-contacts {
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-item {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero {
+        font-size: 20px;
+        padding: 50px 10px;
+    }
+
+    .project-card {
+        max-width: 100%;
+        margin: 16px auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-social img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        font-size: 18px;
+        padding: 30px 10px;
+    }
+
+    .project-list {
+        flex-direction: column;
+    }
+
+    .project-card {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .footer-social img {
+        width: 40px;
+        height: 40px;
+    }
+}
