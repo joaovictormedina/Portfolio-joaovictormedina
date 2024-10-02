@@ -5,7 +5,7 @@ import { fetchGitHubReposCount } from './Api/api.jsx';
 const GitHubProjectsCounter = ({ username }) => {
   const [repoCount, setRepoCount] = useState(0); 
   const [displayCount, setDisplayCount] = useState(0); 
-  const ref = useRef(null); // Ref para o componente
+  const ref = useRef(null);
 
   useEffect(() => {
     const getRepoCount = async () => {
@@ -19,16 +19,15 @@ const GitHubProjectsCounter = ({ username }) => {
     getRepoCount();
   }, [username]);
 
-  // Função memoizada para iniciar a contagem
   const startCounting = useCallback(() => {
-    setDisplayCount(0); // Reseta o displayCount
+    setDisplayCount(0);
     let start = 0;
     const end = repoCount;
 
-    if (end === 0) return; // Se não houver repositórios, não faz nada
+    if (end === 0) return;
 
-    const duration = 2000; // Duração total em milissegundos
-    const incrementTime = Math.floor(duration / end) || 1; // Intervalo de incremento
+    const duration = 2000;
+    const incrementTime = Math.floor(duration / end) || 1;
 
     const timer = setInterval(() => {
       start += 1;
@@ -38,22 +37,22 @@ const GitHubProjectsCounter = ({ username }) => {
       }
     }, incrementTime);
     
-    return () => clearInterval(timer); // Limpeza do timer
+    return () => clearInterval(timer);
   }, [repoCount]);
 
   useEffect(() => {
     const handleIntersect = (entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) { // Verifica se o componente está visível
-          startCounting(); // Inicia a contagem
+        if (entry.isIntersecting) {
+          startCounting();
         } else {
-          resetCounting(); // Reseta a contagem quando sai da tela
+          resetCounting();
         }
       });
     };
 
     const observer = new IntersectionObserver(handleIntersect);
-    const currentRef = ref.current; // Copia o valor da referência
+    const currentRef = ref.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -61,14 +60,14 @@ const GitHubProjectsCounter = ({ username }) => {
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef); // Usa a variável copiada
+        observer.unobserve(currentRef);
       }
-      clearInterval(); // Limpeza do timer ao desmontar
+      clearInterval();
     };
-  }, [startCounting]); // Adiciona startCounting como dependência
+  }, [startCounting]);
 
   const resetCounting = () => {
-    setDisplayCount(0); // Reseta a contagem
+    setDisplayCount(0);
   };
 
   return (
@@ -81,9 +80,8 @@ const GitHubProjectsCounter = ({ username }) => {
   );
 };
 
-// Definição de propTypes para validação das props
 GitHubProjectsCounter.propTypes = {
-  username: PropTypes.string.isRequired, // username deve ser uma string e é obrigatório
+  username: PropTypes.string.isRequired,
 };
 
 export default GitHubProjectsCounter;

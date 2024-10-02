@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Select } from '@mantine/core'; // Importe o componente Select do Mantine
+import { Select } from '@mantine/core';
 import Dev from './about/Dev'; 
 import Teacher from './about/Teacher';
 import Academic from './about/Academic'; 
@@ -57,23 +57,22 @@ const AboutMe = () => {
         placeholder="Selecione uma carreira"
         styles={{
           dropdown: {
-            width: '450px', // Aumenta o tamanho da lista de opções
-            fontSize: '30px', // Aumenta o tamanho da fonte dentro do dropdown
+            width: '450px',
+            fontSize: '30px',
           },
           item: {
-            textAlign: 'center', // Centraliza o texto dos itens
-            fontSize: '30px', // Aumenta o tamanho da fonte dos itens
+            textAlign: 'center',
+            fontSize: '30px',
           },
           input: {
-            textAlign: 'center', // Centraliza o texto no controle (input)
-            width: '450px', // Ajusta o tamanho do controle
-            margin: '0 auto', // Centraliza o select horizontalmente
-            fontSize: '30px', // Aumenta o tamanho da fonte do controle
+            textAlign: 'center',
+            width: '450px',
+            margin: '0 auto',
+            fontSize: '30px',
           },
           root: {
             display: 'flex',
             justifyContent: 'center',
-            // Certifica que o select fica centralizado
           },
         }}
       />

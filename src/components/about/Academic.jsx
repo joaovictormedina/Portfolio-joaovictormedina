@@ -1,10 +1,10 @@
-import './Experiences.css'; // Importa o CSS unificado
-import Rectangle from '../../assets/Rectangle.svg'; // Ajuste o caminho conforme necessário
-import Ellipse1 from '../../assets/Ellipse1.svg'; // Ajuste o caminho conforme necessário
-import Ellipse2 from '../../assets/Ellipse2.svg'; // Ajuste o caminho conforme necessário
-import Ellipse3 from '../../assets/Ellipse3.svg'; // Ajuste o caminho conforme necessário
-import Ellipse4 from '../../assets/Ellipse4.svg'; // Ajuste o caminho conforme necessário
-import Ellipse5 from '../../assets/Ellipse5.svg'; // Ajuste o caminho conforme necessário
+import './Experiences.css';
+import Rectangle from '../../assets/Rectangle.svg';
+import Ellipse1 from '../../assets/Ellipse1.svg';
+import Ellipse2 from '../../assets/Ellipse2.svg';
+import Ellipse3 from '../../assets/Ellipse3.svg';
+import Ellipse4 from '../../assets/Ellipse4.svg';
+import Ellipse5 from '../../assets/Ellipse5.svg';
 
 const Academic = () => {
   const experiences = [

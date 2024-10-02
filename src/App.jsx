@@ -1,10 +1,9 @@
-// src/App.jsx
-import { MantineProvider } from '@mantine/core'; // Importar o MantineProvider
+import { MantineProvider } from '@mantine/core';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import AboutMe from './components/AboutMe';
-import ApiGit from './components/ApiGit'; // Este deve incluir a lógica do GitHubProjectsCounter
+import ApiGit from './components/ApiGit';
 import Footer from './components/Footer';
 import '@mantine/core/styles.css';
 

@@ -1,5 +1,5 @@
-import githubIcon from '../cards/github.svg'; // Ajuste o caminho conforme necessário
-import linkedinIcon from '../cards/linkedin.svg'; // Ajuste o caminho conforme necessário
+import githubIcon from '../cards/github.svg';
+import linkedinIcon from '../cards/linkedin.svg'; 
 
 const Footer = () => {
   const contacts = [
