@@ -51,6 +51,23 @@ nav ul li {
     margin: 0% 5%;
 }
 
+.navbar-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-list li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-item {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
 .navbar-icons {
     display: flex;
     justify-content: flex-end;

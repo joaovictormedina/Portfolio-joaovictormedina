@@ -7,9 +7,12 @@ import Academic from './about/Academic';
 const AboutMe = () => {
   const [profession, setProfession] = useState('Dev'); 
   const [bio, setBio] = useState(''); 
-  
+  const [loading, setLoading] = useState(true); 
+  const [content, setContent] = useState(null); // Estado para o conteúdo renderizado
+
   useEffect(() => {
     const fetchBio = async (selectedProfession) => {
+      setLoading(true); 
       return new Promise((resolve) => {
         setTimeout(() => {
           const bios = {
@@ -24,22 +27,37 @@ const AboutMe = () => {
 
     fetchBio(profession).then(bio => {
       setBio(bio);
+      setLoading(false); 
     });
 
-  }, [profession]); 
+    const fetchContent = async () => {
+      setLoading(true); 
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          switch (profession) {
+            case 'Dev':
+              resolve(<Dev />);
+              break; // Adiciona o break
+            case 'Teacher':
+              resolve(<Teacher />);
+              break; // Adiciona o break
+            case 'Academic':
+              resolve(<Academic />);
+              break; // Adiciona o break
+            default:
+              resolve(null); 
+              break; // Adiciona o break
+          }
+        }, 1000); // Delay de 1 segundo
+      });
+    };
 
-  const renderContent = () => {
-    switch (profession) {
-      case 'Dev':
-        return <Dev />;
-      case 'Teacher':
-        return <Teacher />;
-      case 'Academic':
-        return <Academic />;
-      default:
-        return null; 
-    }
-  };
+    fetchContent().then(content => {
+      setContent(content);
+      setLoading(false); // Finaliza o carregamento
+    });
+
+  }, [profession]); // Executa o efeito sempre que a profissão mudar
 
   return (
     <section id="about" style={{ textAlign: 'center' }}>
@@ -76,8 +94,8 @@ const AboutMe = () => {
           },
         }}
       />
-      <p><i>{bio || 'Carregando biografia, por favor, aguarde...'}</i></p> 
-      {renderContent()} 
+      <p><i>{loading ? 'Carregando biografia, por favor, aguarde...' : bio}</i></p> 
+      {content} {/* Renderiza o conteúdo aqui */}
     </section>
   );
 };
