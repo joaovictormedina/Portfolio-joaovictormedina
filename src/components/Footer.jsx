@@ -1,15 +1,32 @@
 import githubIcon from '../cards/github.svg';
 import linkedinIcon from '../cards/linkedin.svg'; 
+import "../styles/GlobalStyles.css";
 
 const Footer = () => {
   const contacts = [
     {
       title: 'Meu Contato:',
-      description: '21 98757-0827',
+      description: (
+        <a
+          href="https://wa.me/5512987570827"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-link"
+        >
+          21 98757-0827
+        </a>
+      ),
     },
     {
       title: 'Email:',
-      description: `joaovictor.zipp@gmail.com`,
+      description: (
+        <a
+          href="mailto:joaovictor.zipp@gmail.com"
+          className="contact-link"
+        >
+          joaovictor.zipp@gmail.com
+        </a>
+      ),
     },
   ];
 

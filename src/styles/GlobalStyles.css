@@ -192,6 +192,16 @@ section {
     margin-right: 140px;
 }
 
+.contact-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-link:hover {
+    color: inherit;
+}
+
 .footer-item {
     font-family: Poppins;
     font-size: 30px;
