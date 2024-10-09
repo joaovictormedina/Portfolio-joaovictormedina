@@ -65,37 +65,51 @@ const AboutMe = () => {
       <p>Escolha a experiência de qual carreira você quer saber:</p>
       <br />
       <Select
-        value={profession}
-        onChange={setProfession}
-        data={[
-          { value: 'Dev', label: 'Desenvolvedor Full Stack' },
-          { value: 'Teacher', label: 'Professor de Matemática' },
-          { value: 'Academic', label: 'Acadêmica' },
-        ]}
-        placeholder="Selecione uma carreira"
-        styles={{
-          dropdown: {
-            width: '450px',
-            fontSize: '30px',
-          },
-          item: {
-            textAlign: 'center',
-            fontSize: '30px',
-          },
-          input: {
-            textAlign: 'center',
-            width: '450px',
-            margin: '0 auto',
-            fontSize: '30px',
-          },
-          root: {
-            display: 'flex',
-            justifyContent: 'center',
-          },
-        }}
-      />
+  value={profession}
+  onChange={setProfession}
+  data={[
+    { value: 'Dev', label: 'Desenvolvedor Full Stack' },
+    { value: 'Teacher', label: 'Professor de Matemática' },
+    { value: 'Academic', label: 'Acadêmica' },
+  ]}
+  placeholder="Selecione uma carreira"
+  styles={{
+    dropdown: {
+      width: '450px',
+      fontSize: '30px',
+      color: 'black', 
+      backgroundColor: '#f0f0f0', 
+    },
+    item: {
+      textAlign: 'center',
+      fontSize: '30px',
+      color: 'black',
+      '&[data-selected]': {
+        backgroundColor: '#d0eaff',
+      },
+      '&:hover': {
+        backgroundColor: '#b0e0ff',
+        color: 'black',
+      },
+    },
+    input: {
+      textAlign: 'center',
+      width: '450px',
+      margin: '0 auto',
+      fontSize: '30px',
+      color: 'black',
+    },
+    placeholder: {
+      color: 'gray',
+    },
+    root: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  }}
+/>
       <p><i>{loading ? 'Carregando biografia, por favor, aguarde...' : bio}</i></p> 
-      {content} {/* Renderiza o conteúdo aqui */}
+      {content} 
     </section>
   );
 };

@@ -190,7 +190,7 @@ nav ul li {
     font-weight: 500;
     line-height: 45px;
     text-align: center;
-    padding: 70px 10px;
+    padding: 60px 10px;
     color: var(--color-text-dark);
     background-color: var(--color-background-dark);
     transition: background-color 0.3s, color 0.3s;
@@ -435,7 +435,7 @@ section.light {
 
     .hero {
         font-size: 20px;
-        padding: 50px 10px;
+        padding: 50px 10px;        
     }
 
     .project-card {
@@ -453,10 +453,10 @@ section.light {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1030px) {
     .hero {
         font-size: 18px;
-        padding: 30px 10px;
+        padding: 180px 10px;
     }
 
     .project-list {
