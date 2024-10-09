@@ -196,6 +196,10 @@ nav ul li {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.hero h1 {
+    padding: 20px 0 0 0;
+}
+
 .hero.light {
     color: var(--color-text-light);
     background-color: var(--color-background-light);
