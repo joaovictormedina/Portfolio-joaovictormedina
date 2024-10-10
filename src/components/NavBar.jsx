@@ -9,63 +9,55 @@ import { useTheme } from './ThemeContext';
 const NavBar = () => {
   const { toggleTheme, isDarkTheme, githubImage, linkedinImage } = useTheme();
   
-  // Os estados para as imagens dos ícones da navbar
   const [githubIconState, setGithubImage] = useState(githubImage);
   const [linkedinIconState, setLinkedinImage] = useState(linkedinImage);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Atualiza o estado dos ícones quando as imagens do contexto mudam
     setGithubImage(githubImage);
     setLinkedinImage(linkedinImage);
-  }, [githubImage, linkedinImage]); // Inclua as imagens do contexto aqui
+  }, [githubImage, linkedinImage]);
 
-  useEffect(() => {
-    // Apenas a troca de tema
-    setGithubImage(isDarkTheme ? githubImage : githubImage);
-    setLinkedinImage(isDarkTheme ? linkedinImage : linkedinImage);
-  }, [isDarkTheme, githubImage, linkedinImage]); // Inclua as imagens do contexto aqui também
+  const handleGithubMouseEnter = () => setGithubImage(githubMouse);
+  const handleGithubMouseLeave = () => setGithubImage(githubImage);
+  const handleLinkedinMouseEnter = () => setLinkedinImage(linkedinMouse);
+  const handleLinkedinMouseLeave = () => setLinkedinImage(linkedinImage);
 
-  const handleGithubMouseEnter = () => {
-    setGithubImage(githubMouse);
-  };
-
-  const handleGithubMouseLeave = () => {
-    setGithubImage(githubImage);
-  };
-
-  const handleLinkedinMouseEnter = () => {
-    setLinkedinImage(linkedinMouse);
-  };
-
-  const handleLinkedinMouseLeave = () => {
-    setLinkedinImage(linkedinImage);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav>
       <div className='container'>
-        <div className='navbar-list'>
+        <button className="burger-menu" onClick={toggleMenu}>
+          &#9776; 
+        </button>
+              
+        <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
           <ul>
             <li>
-              <Link to="projects" smooth={true} duration={500} className="nav-item">
+              <Link to="projects" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
                 Projetos
               </Link>
             </li>
             <li>
               <span 
-                onClick={() => window.open("https://github.com/joaovictormedina", "_blank")}
+                onClick={() => {
+                  window.open("https://github.com/joaovictormedina", "_blank");
+                  setIsMenuOpen(false);
+                }}
                 className="nav-item"
               >
                 Tecnologias
               </span>
             </li>
             <li>
-              <Link to="about" smooth={true} duration={500} className="nav-item">
+              <Link to="about" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
                 Sobre
               </Link>
             </li>
           </ul>
         </div>
+
         <div className="navbar-icons">
           <a 
             href="https://github.com/joaovictormedina" 

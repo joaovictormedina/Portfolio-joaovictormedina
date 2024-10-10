@@ -9,26 +9,24 @@ const Footer = () => {
   const [githubIconState, setGithubImage] = useState(githubImage);
   const [linkedinIconState, setLinkedinImage] = useState(linkedinImage);
 
-  // Atualiza os ícones quando o tema é alterado
   useEffect(() => {
-    setGithubImage(githubImage);  // Atualiza a imagem do GitHub do contexto
-    setLinkedinImage(linkedinImage); // Atualiza a imagem do LinkedIn do contexto
-  }, [githubImage, linkedinImage]); // Escuta as alterações nas imagens do contexto
+    setGithubImage(githubImage);
+    setLinkedinImage(linkedinImage);
+  }, [githubImage, linkedinImage]);
 
-  // Atualiza os ícones quando o tema escuro é ativado/desativado
   useEffect(() => {
-    const newGithubImage = isDarkTheme ? githubImage : githubImage; // Use a lógica correta aqui
-    const newLinkedinImage = isDarkTheme ? linkedinImage : linkedinImage; // Use a lógica correta aqui
+    const newGithubImage = isDarkTheme ? githubImage : githubImage;
+    const newLinkedinImage = isDarkTheme ? linkedinImage : linkedinImage;
     setGithubImage(newGithubImage);
     setLinkedinImage(newLinkedinImage);
-  }, [isDarkTheme, githubImage, linkedinImage]); // Agora escuta as imagens do contexto
+  }, [isDarkTheme, githubImage, linkedinImage]);
 
   const handleGithubMouseEnter = () => {
     setGithubImage(githubMouse);
   };
 
   const handleGithubMouseLeave = () => {
-    setGithubImage(githubImage); // Retorna a imagem correta do contexto
+    setGithubImage(githubImage);
   };
 
   const handleLinkedinMouseEnter = () => {
@@ -36,7 +34,7 @@ const Footer = () => {
   };
 
   const handleLinkedinMouseLeave = () => {
-    setLinkedinImage(linkedinImage); // Retorna a imagem correta do contexto
+    setLinkedinImage(linkedinImage);
   };
 
   const contacts = [
@@ -72,7 +70,7 @@ const Footer = () => {
         <div className="footer-contacts">
           {contacts.map((contact, index) => (
             <div className="footer-item" key={index}>
-              <h4>{contact.title}</h4>
+              <h4 className="footer-title">{contact.title}</h4>
               <p>{contact.description}</p>
             </div>
           ))}
