@@ -1,7 +1,3 @@
-Desafio 04 - Resolução:
-
-https://desafio04-dnc.netlify.app/
-
 ````markdown
 # Portfólio - João Victor Medina
 
