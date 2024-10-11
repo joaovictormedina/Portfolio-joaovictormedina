@@ -3,7 +3,10 @@
     --color-background-light: #ffffff; 
     --color-background-dark: #0F1624; 
     --color-text-light: #0F1624; 
-    --color-text-dark: #FFFFFF; 
+    --color-text-dark: #FFFFFF;
+    --font-size-large: 30px;
+    --font-size-medium: 24px;
+    --font-size-small: 18px;
 }
 html,
 body {    
@@ -33,7 +36,7 @@ nav {
     width: 100%;
     z-index: 1000;
     font-family: 'Poppins', sans-serif;
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 500;
     line-height: 45px;
     text-align: center;
@@ -61,7 +64,7 @@ body.light .burger-menu {
 .burger-menu {
     display: none;
     background: none;
-    font-size: 35px;
+    font-size: var(--font-size-large);
     cursor: pointer;
     margin-left: 20px;
     position: absolute;
@@ -260,7 +263,7 @@ nav ul li {
 
 .hero {
     font-family: Poppins;
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 500;
     line-height: 45px;
     text-align: center;
@@ -292,7 +295,7 @@ body.light .hero p {
 }
 
 section {
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 400;
     line-height: 30px;
     padding: 10px;
@@ -311,7 +314,7 @@ section.light {
 }
 
 #projects {
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 500;
     line-height: 45px;
     text-align: center;
@@ -375,7 +378,7 @@ section.light {
 }
 
 #about {
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 500;
     line-height: 45px;
     text-align: center;
@@ -422,7 +425,7 @@ section.light {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 140px;
+    margin-right: 40px;
 }
 
 .contact-link {
@@ -459,7 +462,7 @@ section.light {
 
 .footer-item {
     font-family: Poppins;
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: 300;
     line-height: 10px;
     text-align: left;
@@ -484,6 +487,7 @@ section.light {
 
     nav {
         text-align: left;
+        font-size: var(--font-size-medium);
     }
     .nav-items {
         display: none;
@@ -503,7 +507,15 @@ section.light {
     }
 
     .burger-menu {
+        font-size: var(--font-size-medium);
         display: block;
+        width: 26px;
+        height: 30px;
+        padding: 0;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
 
     .navbar-icons {
@@ -526,12 +538,28 @@ section.light {
     }
 
     .hero {
-        font-size: 25px;
+        font-size: var(--font-size-medium);
         padding: 60px 10px;
     }
 
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section {
+        font-size: var(--font-size-medium);
+    }
+
+    #projects {
+        font-size: var(--font-size-medium);
+    }                
+
     .project-card {
         max-width: 90%;
+    }
+
+    #about {
+        font-size: var(--font-size-medium);
     }
 
     .footer-contacts {
@@ -543,13 +571,31 @@ section.light {
     .footer-item {
         text-align: center;
         margin: 10px 0;
+        font-size: var(--font-size-medium);
     }
 }
 
 @media (max-width: 768px) {
+    
+    nav {
+        font-size: var(--font-size-small);
+    }
+        
     .navbar-icons img {
         width: 20px;
         height: 20px;
+    }
+
+    .burger-menu {
+        font-size: var(--font-size-small);
+        width: 20px;
+        height: 24px;
+        padding: 0;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        justify-content: space-between;
     }
 
     .title-git {
@@ -559,15 +605,31 @@ section.light {
     .Count {
         font-size: 180px;
     }
-
+    
     .hero {
-        font-size: 20px;
+        font-size: var(--font-size-small);
         padding: 60px 10px;        
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        font-size: var(--font-size-small);
+    }
+
+    #projects {
+        font-size: var(--font-size-small);
     }
 
     .project-card {
         max-width: 100%;
         margin: 16px auto;
+    }
+
+    #about {
+        font-size: var(--font-size-small);
     }
 
     .about-section {
@@ -589,6 +651,10 @@ section.light {
 
     .footer-title {
         font-size: 24px;
+    }
+
+    .footer-item {
+        font-size: var(--font-size-small);
     }
 }
 
