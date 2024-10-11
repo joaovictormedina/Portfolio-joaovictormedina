@@ -25,7 +25,7 @@ O objetivo deste projeto é oferecer uma apresentação visual e funcional das m
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/joaovictormedina/meu-portifolio.git
+   git clone https://github.com/joaovictormedina/Portfolio-joaovictormedina.git
    ```
 ````
 
