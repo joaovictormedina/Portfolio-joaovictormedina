@@ -9,7 +9,7 @@ function Eed() {
         <Button>Ver Projeto</Button>
       </Popover.Target>
       <Popover.Dropdown>
-        <Text style={{ textAlign: 'justify' }} size="xs">
+        <Text style={{ textAlign: 'justify', color: "black" }} size="xs">
           Repositório no GitHub: 
           <span className="link-space"> </span>
           <a href="https://github.com/joaovictormedina/Espaco-educacao-4.0" target="_blank" rel="noopener noreferrer">
@@ -17,7 +17,7 @@ function Eed() {
           </a>.
         </Text>
         <p></p>
-        <Text style={{ textAlign: 'justify' }} size="xs">
+        <Text style={{ textAlign: 'justify', color: "black" }} size="xs">
           Demonstração: 
           <span className="link-space"> </span>
           <a href="https://joaovictormedina.github.io/Espaco-educacao-4.0/" target="_blank" rel="noopener noreferrer">
