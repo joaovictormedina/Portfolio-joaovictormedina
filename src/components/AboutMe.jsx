@@ -3,6 +3,7 @@ import { Select } from '@mantine/core';
 import Dev from './about/Dev'; 
 import Teacher from './about/Teacher';
 import Academic from './about/Academic'; 
+import useLanguage from './language/useLanguage';
 
 const AboutMe = () => {
   const [profession, setProfession] = useState('Dev'); 
@@ -10,6 +11,7 @@ const AboutMe = () => {
   const [loading, setLoading] = useState(true); 
   const [content, setContent] = useState(null); 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); 
+  const { isPort } = useLanguage();
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,9 +28,15 @@ const AboutMe = () => {
       return new Promise((resolve) => {
         setTimeout(() => {
           const bios = {
-            Dev: 'Comecei a me aprofundar em 2024, mas programava desde 2005 como amador.',
-            Teacher: 'Comecei em 2007 e atualmente estou migrando de carreira.',
-            Academic: 'Iniciei meus estudos no ensino superior em 2007 e nunca mais parei',
+            Dev: isPort 
+              ? 'Comecei a me aprofundar em 2024, mas programava desde 2005 como amador.'
+              : 'I started diving deeper in 2024, but I have been programming as an amateur since 2005.',
+            Teacher: isPort 
+              ? 'Comecei em 2007 e atualmente estou migrando de carreira.'
+              : 'I started in 2007 and am currently transitioning careers.',
+            Academic: isPort 
+              ? 'Iniciei meus estudos no ensino superior em 2007 e nunca mais parei.'
+              : 'I started my higher education studies in 2007 and never stopped.',
           };
           resolve(bios[selectedProfession]);
         }, 1000); 
@@ -67,7 +75,7 @@ const AboutMe = () => {
       setLoading(false); 
     });
 
-  }, [profession]);
+  }, [profession, isPort]);
 
   const selectStyles = {
     dropdown: {
@@ -108,22 +116,22 @@ const AboutMe = () => {
 
   return (
     <section id="about" className="about-section">
-      <h2>Sobre Mim</h2>
-      <p>Escolha a experiência que deseja saber:</p>
+      <h2>{isPort ? 'Sobre Mim' : 'About Me'}</h2>
+      <p>{isPort ? 'Escolha a experiência que deseja saber:' : 'Choose the experience you want to know about:'}</p>
       <br />
       <div className="select-container"></div>
       <Select
         value={profession}
         onChange={setProfession}
         data={[
-          { value: 'Dev', label: 'Desenvolvedor Full Stack' },
-          { value: 'Teacher', label: 'Professor de Matemática' },
-          { value: 'Academic', label: 'Acadêmica' },
+          { value: 'Dev', label: isPort ? 'Desenvolvedor Full Stack' : 'Full Stack Developer' },
+          { value: 'Teacher', label: isPort ? 'Professor de Matemática' : 'Mathematics Teacher' },
+          { value: 'Academic', label: isPort ? 'Acadêmica' : 'Academic' },
         ]}
-        placeholder="Selecione uma carreira"
+        placeholder={isPort ? 'Selecione uma carreira' : 'Select a career'}
         styles={selectStyles}
       />
-      <p><i>{loading ? 'Carregando biografia, por favor, aguarde...' : bio}</i></p>
+      <p><i>{loading ? (isPort ? 'Carregando biografia, por favor, aguarde...' : 'Loading biography, please wait...') : bio}</i></p>
       {content}
     </section>
   );

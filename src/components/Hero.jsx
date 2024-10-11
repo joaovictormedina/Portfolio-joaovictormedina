@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import "../styles/GlobalStyles.css";
-import './Hero.css'; 
-import { useTheme } from './ThemeContext';
+import '../styles/Hero.css'; 
+import { useTheme } from './context/ThemeContext';
+import useLang from './language/useLanguage';
 
 const Hero = () => {
   const { theme } = useTheme();
+  const { isPort } = useLang();
   const [h1Revealed, setH1Revealed] = useState(false);
   const [pRevealed, setPRevealed] = useState(false);
 
@@ -26,21 +28,14 @@ const Hero = () => {
   return (
     <section id="hero" className={`hero ${theme}`}>
       <h1 className={`mask ${h1Revealed ? 'revealed' : ''}`}>
-        Bem-vindo ao meu portfólio! 
+        {isPort ? 'Bem-vindo ao meu portfólio!' : 'Welcome to my portfolio!'}
       </h1><br />
       <h1 className={`mask ${h1Revealed ? 'revealed' : ''}`}>
-        Sou o João Victor Medina.
+        {isPort ? 'Sou o João Victor Medina.' : "I'm João Victor Medina."}
       </h1>
       <p className={`mask ${pRevealed ? 'revealed' : ''}`}>
-        <strong>Sou um desenvolvedor full stack</strong> com expertise em <strong>tecnologias modernas,</strong>
-        <br />
-        incluindo <strong>React</strong> e <strong>TypeScript</strong> para o desenvolvimento de <strong>interfaces dinâmicas</strong>
-        <br />
-        e escaláveis no front-end. Utilizo <strong>Node.js</strong> e <strong>Express.js</strong> para construir <strong>APIs</strong>
-        <br />
-        <strong>robustas</strong> e eficientes, garantindo uma <strong>comunicação fluida</strong> entre o cliente
-        <br />
-        e o servidor.
+        <strong>{isPort ? 'Sou um desenvolvedor full stack' : 'I am a full stack developer'}</strong> 
+        {isPort ? ' com expertise em tecnologias modernas, incluindo React e TypeScript para o desenvolvimento de interfaces dinâmicas e escaláveis no front-end. Utilizo Node.js e Express.js para construir APIs robustas e eficientes, garantindo uma comunicação fluida entre o cliente e o servidor.' : ' with expertise in modern technologies, including React and TypeScript for developing dynamic and scalable front-end interfaces. I use Node.js and Express.js to build robust and efficient APIs, ensuring smooth communication between the client and the server.'}
       </p>
     </section>
   );

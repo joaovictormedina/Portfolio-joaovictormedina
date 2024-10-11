@@ -4,11 +4,14 @@ import githubMouse from '../cards/githubmouse.svg';
 import linkedinMouse from '../cards/linkedinmouse.svg';
 import claroIcon from '../cards/claro.svg';
 import escuroIcon from '../cards/escuro.svg'; 
-import { useTheme } from './ThemeContext';
+import portIcon from '../cards/port.svg';
+import engIcon from '../cards/eng.svg'; 
+import { useTheme } from './context/ThemeContext';
+import useLanguage from './language/useLanguage';
 
 const NavBar = () => {
   const { toggleTheme, isDarkTheme, githubImage, linkedinImage } = useTheme();
-  
+  const { toggleLanguage, isPort } = useLanguage();
   const [githubIconState, setGithubImage] = useState(githubImage);
   const [linkedinIconState, setLinkedinImage] = useState(linkedinImage);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,12 +34,11 @@ const NavBar = () => {
         <button className="burger-menu" onClick={toggleMenu}>
           &#9776; 
         </button>
-              
         <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
           <ul>
             <li>
               <Link to="projects" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
-                Projetos
+                 {isPort ? 'Projetos' : 'Projects'}
               </Link>
             </li>
             <li>
@@ -47,17 +49,16 @@ const NavBar = () => {
                 }}
                 className="nav-item"
               >
-                Tecnologias
+                 {isPort ? 'Tecnologias' : 'Technologies'}
               </span>
             </li>
             <li>
               <Link to="about" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
-                Sobre
+                {isPort ? 'Sobre' : 'About'}
               </Link>
             </li>
           </ul>
         </div>
-
         <div className="navbar-icons">
           <a 
             href="https://github.com/joaovictormedina" 
@@ -79,6 +80,9 @@ const NavBar = () => {
           </a>
           <span onClick={toggleTheme} className="theme-toggle">
             <img src={isDarkTheme ? claroIcon : escuroIcon} alt="Mudar tema" />
+          </span>
+          <span onClick={toggleLanguage} className="language-toggle">
+            <img src={isPort ? engIcon : portIcon} alt="Mudar língua" />
           </span>
         </div>
       </div>

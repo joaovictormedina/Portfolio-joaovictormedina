@@ -1,11 +1,13 @@
 import "../styles/GlobalStyles.css";
-import { useTheme } from './ThemeContext';
+import { useTheme } from './context/ThemeContext';
 import { useState, useEffect } from 'react';
 import githubMouse from '../cards/githubmouse.svg'; 
 import linkedinMouse from '../cards/linkedinmouse.svg';
+import useLanguage from './language/useLanguage'; 
 
 const Footer = () => {
   const { isDarkTheme, githubImage, linkedinImage } = useTheme();
+  const { isPort } = useLanguage(); 
   const [githubIconState, setGithubImage] = useState(githubImage);
   const [linkedinIconState, setLinkedinImage] = useState(linkedinImage);
 
@@ -39,7 +41,7 @@ const Footer = () => {
 
   const contacts = [
     {
-      title: 'Meu Contato:',
+      title: isPort ? 'Meu Contato:' : 'My Contact:', 
       description: (
         <a
           href="https://wa.me/5512987570827"
@@ -52,7 +54,7 @@ const Footer = () => {
       ),
     },
     {
-      title: 'Email:',
+      title: isPort ? 'Email:' : 'Email:', 
       description: (
         <a
           href="mailto:joaovictor.zipp@gmail.com"

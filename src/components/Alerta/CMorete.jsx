@@ -1,27 +1,37 @@
 import { Popover, Text, Button } from "@mantine/core";
 import "../../styles/GlobalStyles.css"; 
-
+import useLanguage from '../language/useLanguage';
 
 function CMorete() {
+  const { isPort } = useLanguage();
+
   return (
     <Popover width={200} position="bottom" withArrow shadow="md">
       <Popover.Target>
-        <Button>Ver Projeto</Button>
+        <Button>{isPort ? 'Ver Projeto' : 'View Project'}</Button>
       </Popover.Target>
       <Popover.Dropdown>
         <Text style={{ textAlign: 'justify', color: "black" }} size="xs">
-          Repositório no GitHub: 
+          {isPort ? 'Repositório no GitHub:' : 'GitHub Repository:'} 
           <span className="link-space"> </span>
-          <a href="https://github.com/joaovictormedina/Curso-Morete" target="_blank" rel="noopener noreferrer">
-            Clique aqui
+          <a 
+            href="https://github.com/joaovictormedina/Curso-Morete" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {isPort ? 'Clique aqui' : 'Click here'}
           </a>.
         </Text>
         <p></p>
         <Text style={{ textAlign: 'justify', color: "black" }} size="xs">
-          Demonstração: 
+          {isPort ? 'Demonstração:' : 'Demo:'} 
           <span className="link-space"> </span>
-          <a href="https://joaovictormedina.github.io/Curso-Morete/" target="_blank" rel="noopener noreferrer">
-            Clique aqui
+          <a 
+            href="https://joaovictormedina.github.io/Curso-Morete/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            {isPort ? 'Clique aqui' : 'Click here'}
           </a>.
         </Text>        
       </Popover.Dropdown>

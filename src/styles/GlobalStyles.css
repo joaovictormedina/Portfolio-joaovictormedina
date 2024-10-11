@@ -257,7 +257,60 @@ nav ul li {
     cursor: pointer;
 }
 
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    bottom: -5px;
+    left: 0;
+}
+
+.theme-toggle:hover::after {
+    width: 100%;
+}
+
 .theme-toggle:hover img {
+    opacity: 0.7;
+    transform: scale(1.1);  
+}
+
+.language-toggle img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.language-toggle {
+    position: relative;
+    display: inline-block;
+}
+
+.language-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    bottom: -5px;
+    left: 0;
+}
+
+.language-toggle:hover::after {
+    width: 100%;
+}
+
+.language-toggle:hover img {
+    opacity: 0.7;
     transform: scale(1.1);
 }
 

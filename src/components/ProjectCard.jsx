@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { useTheme } from './ThemeContext'; // Importe o hook useTheme
+import { useTheme } from './context/ThemeContext'; 
 
 const ProjectCard = ({ image, title, description, alertComponent }) => {
-  const { isDarkTheme } = useTheme(); // Obtenha o tema atual
+  const { isDarkTheme } = useTheme(); 
 
   return (
     <div className={`project-card ${!isDarkTheme ? 'light' : ''}`}>

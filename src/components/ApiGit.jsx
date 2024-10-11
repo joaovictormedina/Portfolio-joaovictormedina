@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types'; 
 import { fetchGitHubReposCount } from './Api/api.jsx'; 
+import useLanguage from './language/useLanguage';
 
 const GitHubProjectsCounter = ({ username }) => {
   const [repoCount, setRepoCount] = useState(0); 
   const [displayCount, setDisplayCount] = useState(0); 
   const ref = useRef(null);
+  const { isPort } = useLanguage();
 
   useEffect(() => {
     const getRepoCount = async () => {
@@ -72,7 +74,7 @@ const GitHubProjectsCounter = ({ username }) => {
 
   return (
     <section id="github-projects" ref={ref}>
-      <h2 className='title-git'>Projetos no GitHub</h2>
+      <h2 className='title-git'>{isPort ? 'Projetos no GitHub' : 'Projects on GitHub'}</h2>
       <p><br /><br />
         <strong className='Count'>{displayCount}</strong> 
       </p>

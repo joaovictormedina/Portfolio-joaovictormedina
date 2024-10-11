@@ -1,7 +1,6 @@
-// src/components/ThemeContext.jsx
-import PropTypes from 'prop-types'; // Adicione isso
+import PropTypes from 'prop-types'; 
 import { createContext, useContext, useState, useEffect } from 'react';
-import { icons } from '../constants/icons';
+import { icons } from '../../constants/icons';
 
 const ThemeContext = createContext();
 
@@ -51,7 +50,6 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// Adicione a definição dos PropTypes aqui
 ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
