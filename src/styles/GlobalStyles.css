@@ -367,22 +367,6 @@ section.light {
     font-size: 200px;
 }
 
-#projects {
-    font-size: var(--font-size-large);
-    font-weight: 500;
-    line-height: 45px;
-    text-align: center;
-    padding: 30px 20px;
-    color: var(--color-text-dark);
-    background-color: var(--color-background-dark);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#projects.light {
-    color: var(--color-text-light);
-    background-color: var(--color-background-light);
-}
-
 .project-list {
     display: flex;
     flex-wrap: wrap;
@@ -392,13 +376,7 @@ section.light {
     line-height: 20px;
     text-align: center;
     padding: 50px 20px;
-    color: var(--color-text-dark);
     transition: background-color 0.3s, color 0.3s;
-}
-
-.project-list.light {
-    color: var(--color-text-light);
-    background-color: var(--color-background-light);
 }
 
 .project-card {
@@ -409,6 +387,18 @@ section.light {
     text-align: center;
     max-width: 300px;
     background-color: #3f3f3f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: auto;
+    height: auto;  
+}
+
+.project-card a {
+    color: var(--color-text-dark);
+}
+
+.project-card.light a {
+    color: var(--color-text-light);
 }
 
 .project-card.light {
@@ -424,6 +414,40 @@ section.light {
 
 .project-link:hover {
     text-decoration: underline;
+}
+
+.show-projects {
+    margin-top: 16px;
+        padding: 8px 16px;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        color: var(--color-text-dark);
+}
+
+.show-projects.light {
+    color: var(--color-text-light);
+    background-color: var(--color-background-light);
+}
+
+.show-projects.dark {
+    color: var(--color-text-dark);
+    background-color: #3f3f3f;
+}
+
+.show-projects.light:hover {
+    background-color: rgba(230, 230, 230, 0.986);
+    color: var(--color-text-light);
+    transform: scale(1.05);
+}
+
+.show-projects.dark:hover {
+    background-color: rgba(63, 63, 63, 0.8);
+    color: var(--color-text-dark);
+    transform: scale(1.05);
 }
 
 .about-section {
@@ -610,7 +634,7 @@ section.light {
     }                
 
     .project-card {
-        max-width: 90%;
+        max-width: 40%;
     }
 
     #about {
@@ -679,8 +703,8 @@ section.light {
     }
 
     .project-card {
-        max-width: 100%;
-        margin: 16px auto;
+        max-width: 60%;
+        margin: 16px 16px auto;
     }
 
     #about {

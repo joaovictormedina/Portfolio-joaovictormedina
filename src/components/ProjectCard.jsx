@@ -1,14 +1,31 @@
 import PropTypes from 'prop-types';
 import { useTheme } from './context/ThemeContext'; 
+import useLanguage from './language/useLanguage';
 
-const ProjectCard = ({ image, title, description, alertComponent }) => {
+const ProjectCard = ({ title, description, languages, repoUrl, alertComponent }) => {
   const { isDarkTheme } = useTheme(); 
+  const { isPort } = useLanguage(); 
 
   return (
     <div className={`project-card ${!isDarkTheme ? 'light' : ''}`}>
-      <img src={image} alt={title} className="project-image" />
       <h3>{title}</h3>
       <p>{description}</p>
+      
+      {languages && (
+        <div className="language-container">
+          {languages.map((lang, index) => (
+            <div key={index} className="language-item">
+              <span>{lang.icon} {lang.name} - {lang.percentage}%</span>
+            </div>
+          ))}
+        </div>
+      )}
+      <br />
+      {repoUrl && (
+        <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+          {isPort ? 'Ver no GitHub' : 'View on GitHub'} 
+        </a>
+      )}
 
       {alertComponent && (
         <div className="alert-container">
@@ -20,9 +37,16 @@ const ProjectCard = ({ image, title, description, alertComponent }) => {
 };
 
 ProjectCard.propTypes = {
-  image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  languages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+      icon: PropTypes.element.isRequired,
+    })
+  ),
+  repoUrl: PropTypes.string,
   alertComponent: PropTypes.element 
 };
 

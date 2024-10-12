@@ -37,6 +37,11 @@ const NavBar = () => {
         <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
           <ul>
             <li>
+              <Link to="hero" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
+                 {isPort ? 'Início' : 'Home'}
+              </Link>
+            </li>
+            <li>
               <Link to="projects" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
                  {isPort ? 'Projetos' : 'Projects'}
               </Link>
