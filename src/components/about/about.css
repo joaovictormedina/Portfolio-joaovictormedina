@@ -1,0 +1,42 @@
+.formacoes .education-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    gap: 10px;
+    text-align: start;
+    padding-left: 60px;
+}
+
+.education-list li {
+    margin-bottom: 8px;
+    
+}
+
+.certificados .certificates-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: start;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.certificates-list li {
+    margin-bottom: 8px;
+}
+
+.project-title {
+    padding: 25px;
+}
+
+@media (max-width: 800px) {
+    .certificados .certificates-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
