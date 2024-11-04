@@ -4,6 +4,7 @@
     gap: 10px;
     text-align: start;
     padding-left: 60px;
+    padding-right: 60px;
 }
 
 .education-list li {
@@ -35,8 +36,14 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .formacoes .education-list {
+        padding-left: 25px;
+        padding-right: 25px;
+
     }
 }
 
