@@ -5,6 +5,7 @@
     text-align: start;
     padding-left: 60px;
     padding-right: 60px;
+    line-height: 1.2;
 }
 
 .education-list li {
@@ -21,6 +22,7 @@
     text-align: start;
     padding-left: 60px;
     padding-right: 60px;
+    line-height: 1.2;
 }
 
 .certificates-list li {

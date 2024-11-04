@@ -15,21 +15,25 @@ const Formacoes = () => {
             ? "2019 - Graduação em Licenciatura em Matemática."
             : "2019 - Bachelor's Degree in Mathematics Education."}
         </li>
+        <br />
         <li>
           {isPort
             ? "2019 - Pós-graduação em Gestão Escolar e Coordenação Pedagógica."
             : "2019 - Postgraduate in School Management and Pedagogical Coordination."}
         </li>
+        <br />
         <li>
           {isPort
             ? "2019 - Pós-graduação em Matemática Financeira e Estatística."
             : "2019 - Postgraduate in Financial Mathematics and Statistics."}
         </li>
+        <br />
         <li>
           {isPort
             ? "2023 - Licenciatura em Informática."
             : "2023 - Bachelor's Degree in Information Technology."}
         </li>
+        <br />
         <li>
           {isPort
             ? "2026 - Graduação em Análise e Desenvolvimento de Sistemas."
