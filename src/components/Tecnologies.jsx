@@ -41,27 +41,11 @@ const Tecnologies = () => {
     { img: mysqlImg, name: "MySQL" },
   ];
 
-  const tools = [
-    {
-      img: figmaImg,
-      name: "Figma",
-      description: isPort
-        ? "Para design e prototipagem."
-        : "For design and prototyping.",
-    },
-    {
-      img: gitImg,
-      name: "Git",
-      description: isPort ? "Para controle de versão." : "For version control.",
-    },
-    {
-      img: apiImg,
-      name: "APIs",
-      description: isPort
-        ? "Com preferência por REST."
-        : "With a preference for REST.",
-    },
-  ];
+  const designSkills = [{ img: figmaImg, name: "Figma" }];
+
+  const controlSkills = [{ img: gitImg, name: "Git" }];
+
+  const apiSkills = [{ img: apiImg, name: "APIs" }];
 
   return (
     <section id="tecnologies" className="tecnologies-section">
@@ -69,7 +53,6 @@ const Tecnologies = () => {
         {isPort ? "Tecnologias e Linguagens" : "Technologies and Languages"}
       </h2>
       <p>{isPort ? "Principais habilidades" : "Main skills"}</p>
-
       <div className="skills-container">
         {mainSkills.map((skill) => (
           <div className="skill-item" key={skill.name}>
@@ -78,13 +61,11 @@ const Tecnologies = () => {
           </div>
         ))}
       </div>
-
       <p>
         {isPort
           ? "Conhecimentos que possuo são:"
           : "Other skills and knowledge I have include:"}
       </p>
-
       <div className="skills-container">
         {additionalSkills.map((skill) => (
           <div className="skill-item" key={skill.name}>
@@ -93,17 +74,40 @@ const Tecnologies = () => {
           </div>
         ))}
       </div>
-
-      <div className="tools-container">
-        {tools.map((tool) => (
-          <div className="tools-item" key={tool.name}>
-            <p>{tool.description}</p>
-            <div className="skill-item">
-              <img src={tool.img} alt={tool.name} />
-              <p>{isPort ? tool.name : tool.name}</p>
+      <div className="organization-container">
+        <p>
+          {isPort
+            ? "Para design e prototipagem."
+            : "For design and prototyping."}
+        </p>
+        <div className="design-container">
+          {designSkills.map((skill) => (
+            <div className="organization-item" key={skill.name}>
+              <img src={skill.img} alt={skill.name} />
+              <p>{isPort ? skill.name : skill.name}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <p>{isPort ? "Para controle de versão." : "For version control."}</p>
+        <div className="control-container">
+          {controlSkills.map((skill) => (
+            <div className="organization-item" key={skill.name}>
+              <img src={skill.img} alt={skill.name} />
+              <p>{isPort ? skill.name : skill.name}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          {isPort ? "Com preferência por REST." : "With a preference for REST."}
+        </p>
+        <div className="api-container">
+          {apiSkills.map((skill) => (
+            <div className="organization-item" key={skill.name}>
+              <img src={skill.img} alt={skill.name} />
+              <p>{isPort ? skill.name : skill.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
