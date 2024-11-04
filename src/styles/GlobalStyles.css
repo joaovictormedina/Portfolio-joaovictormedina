@@ -242,7 +242,8 @@ nav ul li {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 15px;
+    gap: 0px;
+    padding-right: 20px;
 }
 
 .navbar-icons img {
@@ -453,7 +454,7 @@ section.light {
 
 .about-section {
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 #about {

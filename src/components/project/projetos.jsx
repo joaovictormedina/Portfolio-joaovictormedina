@@ -119,7 +119,7 @@ const Projetos = () => {
   ];
 
   return (
-    <div className={`projetos ${theme}`}>
+    <div id="projects" className={`projetos ${theme}`}>
       <h2>{isPort ? "" : ""}</h2>
       <div className="projects-list">
         {projects.map((project, index) => (

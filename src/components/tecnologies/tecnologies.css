@@ -12,6 +12,28 @@
 }
 
 .skill-item img {
-    width: 80px;
+    width: 100px;
     height: auto;
+}
+
+.skills-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: center; 
+    padding-left: 50px;  
+    padding-right: 50px;
+}
+
+.skills-container p {
+    font-size: 20px;
+}
+
+.skill-item p {
+    font-size: 20px;
+}
+
+.tecnologies-section {
+    padding-top: 45px;
 }
