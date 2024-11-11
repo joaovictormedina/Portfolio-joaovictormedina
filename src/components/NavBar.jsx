@@ -1,13 +1,13 @@
-import { Link } from 'react-scroll';
-import { useState, useEffect } from 'react';
-import githubMouse from '../cards/githubmouse.svg'; 
-import linkedinMouse from '../cards/linkedinmouse.svg';
-import claroIcon from '../cards/claro.svg';
-import escuroIcon from '../cards/escuro.svg'; 
-import portIcon from '../cards/port.svg';
-import engIcon from '../cards/eng.svg'; 
-import { useTheme } from './context/ThemeContext';
-import useLanguage from './language/useLanguage';
+import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
+import githubMouse from "../cards/githubmouse.svg";
+import linkedinMouse from "../cards/linkedinmouse.svg";
+import claroIcon from "../cards/claro.svg";
+import escuroIcon from "../cards/escuro.svg";
+import portIcon from "../cards/port.svg";
+import engIcon from "../cards/eng.svg";
+import { useTheme } from "./context/ThemeContext";
+import useLanguage from "./language/useLanguage";
 
 const NavBar = () => {
   const { toggleTheme, isDarkTheme, githubImage, linkedinImage } = useTheme();
@@ -30,50 +30,73 @@ const NavBar = () => {
 
   return (
     <nav>
-      <div className='container'>
+      <div className="container">
         <button className="burger-menu" onClick={toggleMenu}>
-          &#9776; 
+          &#9776;
         </button>
-        <div className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`nav-items ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="projects" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
-                 {isPort ? 'Projetos' : 'Projects'}
+              <Link
+                to="hero"
+                smooth={true}
+                duration={500}
+                className="nav-item"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {isPort ? "Início" : "Home"}
               </Link>
             </li>
             <li>
-              <span 
-                onClick={() => {
-                  window.open("https://github.com/joaovictormedina", "_blank");
-                  setIsMenuOpen(false);
-                }}
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
                 className="nav-item"
+                onClick={() => setIsMenuOpen(false)}
               >
-                 {isPort ? 'Tecnologias' : 'Technologies'}
-              </span>
+                {isPort ? "Projetos" : "Projects"}
+              </Link>
             </li>
             <li>
-              <Link to="about" smooth={true} duration={500} className="nav-item" onClick={() => setIsMenuOpen(false)}>
-                {isPort ? 'Sobre' : 'About'}
+              <Link
+                to="tecnologies"
+                smooth={true}
+                duration={500}
+                className="nav-item"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {isPort ? "Tecnologias" : "Technologies"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                className="nav-item"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {isPort ? "Sobre" : "About"}
               </Link>
             </li>
           </ul>
         </div>
         <div className="navbar-icons">
-          <a 
-            href="https://github.com/joaovictormedina" 
-            target="_blank" 
+          <a
+            href="https://github.com/joaovictormedina"
+            target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={handleGithubMouseEnter} 
-            onMouseLeave={handleGithubMouseLeave} 
+            onMouseEnter={handleGithubMouseEnter}
+            onMouseLeave={handleGithubMouseLeave}
           >
             <img src={githubIconState} alt="GitHub" />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/joaovictormedina/" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/joaovictormedina/"
+            target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={handleLinkedinMouseEnter} 
+            onMouseEnter={handleLinkedinMouseEnter}
             onMouseLeave={handleLinkedinMouseLeave}
           >
             <img src={linkedinIconState} alt="LinkedIn" />

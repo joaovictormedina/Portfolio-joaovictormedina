@@ -18,29 +18,19 @@ export const ThemeProvider = ({ children }) => {
     const nav = document.querySelector('nav');
     const sections = document.querySelectorAll('.hero, section, #projects, #about, .project-list, .footer, .contact-link');
 
-    if (isDarkTheme) {
-      body.classList.add('dark');
-      body.classList.remove('light');
-      nav.classList.add('dark');
-      nav.classList.remove('light');
-      sections.forEach(section => {
-        section.classList.add('dark');
-        section.classList.remove('light');
-      });
-      setGithubImage(icons.github);
-      setLinkedinImage(icons.linkedin);
-    } else {
-      body.classList.add('light');
-      body.classList.remove('dark');
-      nav.classList.add('light');
-      nav.classList.remove('dark');
-      sections.forEach(section => {
-        section.classList.add('light');
-        section.classList.remove('dark');
-      });
-      setGithubImage(icons.githubLight);
-      setLinkedinImage(icons.linkedinLight);
-    }
+    // Limpar classes antes de adicionar as novas
+    body.classList.toggle('dark', isDarkTheme);
+    body.classList.toggle('light', !isDarkTheme);
+    nav.classList.toggle('dark', isDarkTheme);
+    nav.classList.toggle('light', !isDarkTheme);
+    sections.forEach(section => {
+      section.classList.toggle('dark', isDarkTheme);
+      section.classList.toggle('light', !isDarkTheme);
+    });
+
+    // Atualizar imagens do GitHub e LinkedIn
+    setGithubImage(isDarkTheme ? icons.github : icons.githubLight);
+    setLinkedinImage(isDarkTheme ? icons.linkedin : icons.linkedinLight);
   }, [isDarkTheme]);
 
   return (
